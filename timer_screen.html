@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="main.css">
+    
+    <title>Timer Screen</title>
+  </head>
+  <body>
+    <nav class="navbar">
+        <button id="opencloseSettings">Settings</button>
+        <button id="minButton">-</button>
+        <button id="closeButton">x</button>
+    </nav>
+
+    <div id="settingsMenu" class="settings-menu">
+      <h2>Settings</h2>
+      <p>Focus Time: </p>
+      <input type="number" id="focusTime" placeholder="25">
+      <p>Short Rest Time: </p>
+      <input type="number" id="shortRestTime" placeholder="5">
+      <p>Long Rest Time:</p>
+      <input type="number" id="longRestTime" placeholder="10">
+
+      <button id="saveSettingsButton">Save</button>
+    </div>
+
+
+
+    <h1 id="lock_in_status"></h1>
+    <div id="timer">
+        <span id="minutes">25</span>:<span id="seconds">00</span>
+    </div>
+
+    <button id="play_pause_button">Play/Pause</button>
+    <button id="skip_button">Skip</button>
+    <button id="reset_button">Reset</button>
+    <p id="round_display"></p>
+
+
+    <div id="finished" class="popup">
+      <h2>Are you fiinished?</h2>
+      <button id="yemsh_button">Yemsh</button>
+      <button id="nyo_button">Nyo</button>
+
+    </div>
+
+    <div id="timer_finished_popup" class="popup">
+      <h2>Timer Finished!</h2>
+      <button id="continue_button">Continue</button>
+      <button id="done_button">No mroe</button>
+    </div>
+    
+    <script src="timer_screen.js"></script>
+  </body>
+</html>
