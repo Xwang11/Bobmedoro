@@ -169,7 +169,7 @@ function nyoFunction(){
 // yemsh button
 function finished() {
     localStorage.setItem('totalFocusTime', totalFocusTime);
-    window.location.href="finishedScreen.html";
+    window.location.href="../html/finishedScreen.html";
 }
 
 // continue button

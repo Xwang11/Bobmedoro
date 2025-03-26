@@ -28,7 +28,7 @@ if (isEmptyString(user_notes)) {
 
 // start over button
 function startOver() {
-    window.location.href="index.html";
+    window.location.href="../html/index.html";
 }
 
 startOverButton.addEventListener('click', startOver);
