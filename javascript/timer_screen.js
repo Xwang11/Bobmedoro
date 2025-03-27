@@ -1,10 +1,12 @@
-// Read from html file
-// Display 
+// VARIABLES AND CONSTANTS
+
+// Display Elements
 const minutesDisplay = document.getElementById('minutes');
 const secondsDisplay = document.getElementById('seconds');
 const lockInStatus =document.getElementById('lock_in_status');
+const body = document.body;
 
-// Needed buttons
+// Buttons Elements
 const playPauseButton = document.getElementById('play_pause_button');
 const skipButton = document.getElementById('skip_button');
 const resetButton = document.getElementById('reset_button');
@@ -15,11 +17,11 @@ const doneButton = document.getElementById('done_button');
 const continueButton = document.getElementById('continue_button');
 const saveSettingsButton = document.getElementById('saveSettingsButton');
 
-// Popups
+// Popups Elements
 const finishedPopUp = document.getElementById('finished');
 const timerFinishedPopUp = document.getElementById('timer_finished_popup');
 
-// Settings
+// Settings Elements
 const openCloseSettingsButton = document.getElementById('opencloseSettings');
 const settingsMenu = document.getElementById('settingsMenu');
 
@@ -30,6 +32,7 @@ let totalSeconds;
 let timerInterval;
 let counting;
 
+// Default Times
 let lockInTime = 25;
 let shortRestTime = 5;
 let longRestTime = 10;
@@ -40,44 +43,34 @@ let state = 0;
 let roundCount = 0;
 const totalRounds = 4;
 
-// Opening settings
-function openCloseSettingsFunction() {
-    settingsMenu.classList.toggle('active');
-}
 
-// Timer finished alert
-function timerFinished() {
-    // Play a noise, give an alert, and move on to the next screen
-    counting = false;
-    timerFinishedPopUp.style.display = 'block';  
-}
+// TIMER FUNCTIONS
 
-// Update timer
-function updateDisplay(){
-    const minutes = Math.floor(totalSeconds/60);
-    const seconds = totalSeconds % 60;
-
-    minutesDisplay.innerText = minutes.toString().padStart(2, '0');
-    secondsDisplay.innerText = seconds.toString().padStart(2, '0');
-    roundDisplay.innerText = `${roundCount.toString()} / 4`;
-};
-
-// Calculate what state it should be: focus, short rest, or long reset
-function updateState() {
-    if (state == 0) {
-        roundCount +=1; 
-        if (roundCount > totalRounds-1) {
-            roundCount = 0;
-            state = 2;
-        } else {
-            state = 1;
-        }
-    } else if (state==1){
-        state = 0;
-    } else {
-        state = 0;
+// Set up timer
+function setup(state) {
+    let time;
+    switch (state) {
+        case 0:
+            time = lockInTime;
+            lockInStatus.innerText="Locked In";
+            break;
+        case 1:
+            time= shortRestTime;
+            lockInStatus.innerText="Short Rest";
+            break;
+        case 2:
+            time = longRestTime;
+            lockInStatus.innerText="Long Rest";
+            break;
     }
-    setup(state);
+    switchBackground(state);
+
+    clearInterval(timerInterval);
+    totalMinutes = time;
+    totalSeconds = totalMinutes * 60;
+    counting = true;
+    updateDisplay();
+    timerInterval = setInterval(theTimer, 1000);
 }
 
 // Run the timer
@@ -98,28 +91,62 @@ function theTimer() {
     }
 }
 
-// Set up timer
-function setup(state) {
-    if (state==0){
-        time= lockInTime;
-        lockInStatus.innerText="Locked In";
-    }
-    if (state==1) {
-        time= shortRestTime;
-        lockInStatus.innerText="Short Rest";
-    } 
-    if (state==2){
-        time = longRestTime;
-        lockInStatus.innerText="Long Rest";
-    }
+// Update timer
+function updateDisplay(){
+    const minutes = Math.floor(totalSeconds/60);
+    const seconds = totalSeconds % 60;
 
-    clearInterval(timerInterval);
-    totalMinutes = time;
-    totalSeconds = totalMinutes * 60;
-    counting = true;
-    updateDisplay();
-    timerInterval = setInterval(theTimer, 1000);
+    minutesDisplay.innerText = minutes.toString().padStart(2, '0');
+    secondsDisplay.innerText = seconds.toString().padStart(2, '0');
+    roundDisplay.innerText = `${roundCount.toString()} / 4`;
+};
 
+// Timer finished alert
+function timerFinished() {
+    // Play a noise, give an alert, and move on to the next screen
+    counting = false;
+    timerFinishedPopUp.style.display = 'block';  
+}
+
+// Calculate what state it should be: focus, short rest, or long reset
+function updateState() {
+    if (state == 0) {
+        roundCount +=1; 
+        if (roundCount > totalRounds-1) {
+            roundCount = 0;
+            state = 2;
+        } else {
+            state = 1;
+        }
+    } else if (state==1){
+        state = 0;
+    } else {
+        state = 0;
+    }
+    setup(state);
+}
+
+// Switch background
+function switchBackground(state) {
+    if (state==0) {
+        if (body.classList.contains("relaxed")) {
+            body.classList.remove("relaxed");
+        }
+        body.classList.add("lockedIn");
+    } else {
+        if (body.classList.contains("lockedIn")) {
+            body.classList.remove("lockedIn");
+        }
+        body.classList.add("relaxed");
+    }
+}
+
+
+// SETTINGS FUNCTIONS
+
+// Opening settings
+function openCloseSettingsFunction() {
+    settingsMenu.classList.toggle('active');
 }
 
 // Save settings
@@ -127,7 +154,7 @@ function saveSettings() {
     lockInTime = document.getElementById('focusTime').value;
     shortRestTime = document.getElementById('shortRestTime').value;
     longRestTime = document.getElementById('longRestTime').value;
-
+    
     if (lockInTime == 0) {
         lockInTime = 25;
     }
@@ -140,6 +167,8 @@ function saveSettings() {
     setup(0);
     openCloseSettingsFunction();
 }
+
+// TIMER SCREEN BUTTON FUNCTIONS
 
 // Pause Play Button
 function playPauseTimer() {
@@ -160,6 +189,8 @@ function reset() {
     updateDisplay();
 };
 
+// POPUP SCREEN BUTTON FUNCTIONS
+
 // nyo button
 function nyoFunction(){
     finishedPopUp.style.display = 'none';
@@ -177,8 +208,9 @@ function continue_function() {
     counting = true;
     timerFinishedPopUp.style.display= 'none';
 }
-// Run when starting initially
-setup(0);
+
+
+// EVENT LISTENERS
 
 playPauseButton.addEventListener('click', playPauseTimer);
 skipButton.addEventListener('click', skip);
@@ -190,3 +222,6 @@ continueButton.addEventListener('click', continue_function);
 
 openCloseSettingsButton.addEventListener('click', openCloseSettingsFunction);
 saveSettingsButton.addEventListener('click', saveSettings);
+
+// Run when starting initially
+setup(0);

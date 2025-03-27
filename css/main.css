@@ -26,3 +26,24 @@
 .settings-menu.active {
     left: 0;
   }  
+
+
+.mainPage {
+    background-image: url("../assets/Bob\ Start.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+}
+
+.timerPage {
+    background-image: url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+}
+
+.timerPage.lockedIn{
+    background-image: url("../assets/Bob\ Focus.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+}
+
+.timerPage.relaxed{
+    background-image: url("../assets/Relaxed\ Bob.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+}
+
+.finishedPage {
+    background-image: url("../assets/Bob\ Finished.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+}
