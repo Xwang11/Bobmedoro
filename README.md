@@ -26,5 +26,5 @@ hosted on google drive because the zip file size was too large for github
 
 On macs the app might show as damaged due to extra metadata. Do the following to fix that issue:
 - Open terminal
-- Type in "xattr -cr <path-to-the-unzipped-app>.app"
+- Type in "xattr -cr \<path-to-the-unzipped-app\>.app"
 - Or you can type "xattr -cr " then drag the file to terminal 
