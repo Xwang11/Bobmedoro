@@ -10,9 +10,13 @@ Then I drew some assets and made a prototype on [figma](https://www.figma.com/pr
 
 Once the figma prototyle was up to par, and I have a clear idea of what I want this app to look like, I moved on to the building process
 
-## Building Process (In Progress)
-- I started with the html and js to get the layout of major elements done, buttons working, and timer logic functioning, which took a little bit. 
-- Now I am on the css process of making everything look like the prototype!!
+## Building Process 
+- Built up layout with HTML
+- Implemented timer functions with javascript
+- Used CSS to make the app look like the prototype, utilizing flexbox, updating HTML and JS along the way
+- Replaced images with CSS-generated elements in order to save storage space
+- Packaged with electron forge
+- Final product is uploaded as a zip file in this github! Link to download is also below
 
 ## More is to come! 
 - Adding options on the menu to customize the background and what Bob is focusing on!
