@@ -1,5 +1,6 @@
-// VARIABLES AND CONSTANTS
+// Elements
 
+// On timer Page
 const minutesDisplay = document.getElementById('minutes');
 const secondsDisplay = document.getElementById('seconds');
 const lockInStatus =document.getElementById('lock_in_status');
@@ -18,7 +19,7 @@ const yemshButton = document.getElementById('yemsh_button');
 const roundDisplay = document.getElementById('round_display');
 const doneButton = document.getElementById('done_button');
 const continueButton = document.getElementById('continue_button');
-const saveSettingsButton = document.getElementById('saveSettingsButton');
+
 
 // Popups Elements
 const finishedPopUp = document.getElementById('finished');
@@ -26,7 +27,10 @@ const timerFinishedPopUp = document.getElementById('timer_finished_popup');
 
 // Settings Elements
 const openCloseSettingsButton = document.getElementById('opencloseSettings');
+const openCloseSettingsButtonInMenu = document.getElementById('opencloseSettingsInMenu')
 const settingsMenu = document.getElementById('settingsMenu');
+const saveSettingsButton = document.getElementById('saveSettingsButton');
+
 
 // Define variables
 let totalFocusTime=0; // in seconds
@@ -45,6 +49,13 @@ let state = 0;
 
 let roundCount = 0;
 const totalRounds = 4;
+
+// START FUNCTIONS
+function go() {
+    notes = document.getElementById('notes').value;
+    localStorage.setItem('user_notes', notes)
+    window.location.href='../html/timer_screen.html';
+}
 
 
 // TIMER FUNCTIONS
@@ -169,10 +180,6 @@ function saveSettings() {
     openCloseSettingsFunction();
 }
 
-module.exports = {openCloseSettingsFunction, saveSettings};
-
-
-
 // TIMER SCREEN BUTTON FUNCTIONS
 
 // Pause Play Button
@@ -217,6 +224,10 @@ function continue_function() {
 
 // EVENT LISTENERS
 
+// On Start/Index Page
+
+// On Timer Page
+if (playPauseButton) {
 playPauseButton.addEventListener('click', playPauseTimer);
 skipButton.addEventListener('click', skip);
 resetButton.addEventListener('click', reset);
@@ -224,9 +235,14 @@ nyoButton.addEventListener('click', nyoFunction);
 yemshButton.addEventListener('click', finished);
 doneButton.addEventListener('click', finished);
 continueButton.addEventListener('click', continue_function);
+}
 
-openCloseSettingsButton.addEventListener('click', openCloseSettingsFunction);
-saveSettingsButton.addEventListener('click', saveSettings);
+// Settings
+if (openCloseSettingsButton) {
+    openCloseSettingsButton.addEventListener('click', openCloseSettingsFunction);
+    openCloseSettingsButtonInMenu.addEventListener('click', openCloseSettingsFunction)
+    saveSettingsButton.addEventListener('click', saveSettings);
+}
 
 // Run when starting initially
 setup(0);
