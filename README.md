@@ -18,3 +18,6 @@ Once the figma prototyle was up to par, and I have a clear idea of what I want t
 - Adding options on the menu to customize the background and what Bob is focusing on!
 - Audio cues when the timer is up
 - Possibly integrating app as a browser extension
+
+## Current Download
+Download [Here](https://github.com/Xwang11/Bobmedoro/blob/main/out/make/zip/darwin/arm64/bobmedoro-darwin-arm64-1.0.0.zip)!!!
