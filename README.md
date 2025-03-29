@@ -20,4 +20,6 @@ Once the figma prototyle was up to par, and I have a clear idea of what I want t
 - Possibly integrating app as a browser extension
 
 ## Current Download
-Download [Here](https://github.com/Xwang11/Bobmedoro/raw/refs/heads/main/bobmedoro-darwin-arm64-1.0.0.zip?download=)!!!
+Download [Here](https://drive.google.com/file/d/1FvWTs6ySY2bgiffQJzC8wK-qOtRaCFmS/view?usp=sharing)!!!!
+
+hosted on google drive because the zip file size was too large for github
