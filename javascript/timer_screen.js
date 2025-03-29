@@ -1,10 +1,13 @@
 // VARIABLES AND CONSTANTS
 
-// Display Elements
 const minutesDisplay = document.getElementById('minutes');
 const secondsDisplay = document.getElementById('seconds');
 const lockInStatus =document.getElementById('lock_in_status');
 const body = document.body;
+
+const bobStateFocus = document.getElementById("bobStateFocus");
+const bobStateRelax = document.getElementById("bobStateRelax");
+const bobWindow = document.getElementById("bobWindow");
 
 // Buttons Elements
 const playPauseButton = document.getElementById('play_pause_button');
@@ -129,15 +132,13 @@ function updateState() {
 // Switch background
 function switchBackground(state) {
     if (state==0) {
-        if (body.classList.contains("relaxed")) {
-            body.classList.remove("relaxed");
-        }
-        body.classList.add("lockedIn");
+        bobStateFocus.style.display = "block";
+        bobStateRelax.style.display = "none";
+        bobWindow.style.display = "block";
     } else {
-        if (body.classList.contains("lockedIn")) {
-            body.classList.remove("lockedIn");
-        }
-        body.classList.add("relaxed");
+        bobStateFocus.style.display = "none";
+        bobStateRelax.style.display = "block";
+        bobWindow.style.display = "none";
     }
 }
 
@@ -168,12 +169,16 @@ function saveSettings() {
     openCloseSettingsFunction();
 }
 
+module.exports = {openCloseSettingsFunction, saveSettings};
+
+
+
 // TIMER SCREEN BUTTON FUNCTIONS
 
 // Pause Play Button
 function playPauseTimer() {
     counting = false;
-    finishedPopUp.style.display = 'block';
+    finishedPopUp.style.display = 'flex';
 };
 
 // Skip Button

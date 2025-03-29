@@ -31,4 +31,5 @@ function startOver() {
     window.location.href="../html/index.html";
 }
 
+
 startOverButton.addEventListener('click', startOver);

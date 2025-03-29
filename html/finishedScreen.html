@@ -12,17 +12,31 @@
       content="default-src 'self'; script-src 'self'"
     />
     <link rel="stylesheet" href="../css/main.css">
-    <title>Finished</title>
+    <title>Bobmedoro</title>
   </head>
+
+
   <body class="finishedPage">
-    <nav class="navbar">
-      <a href="../html/index.html">Menu</a>
-      <button id="minButton">-</button>
-      <button id="closeButton">x</button>
-  </nav>
-    <h1>Well Done</h1>
-    <p id="study_time"></p>
-    <button id="startover">Reset</button>
+
+    <button id="opencloseSettings">Settings</button>
+    <div id="settingsMenu" class="settings-menu">
+      <p>Focus Time: </p>
+      <input type="number" id="focusTime" placeholder="25">
+      <p>Short Rest Time: </p>
+      <input type="number" id="shortRestTime" placeholder="5">
+      <p>Long Rest Time:</p>
+      <input type="number" id="longRestTime" placeholder="10">
+
+      <button id="saveSettingsButton">Save</button>
+    </div>
+
+    
+    <div class="finishedPageContainer">
+      <h1 id="finalMessage">Well Done</h1>
+      <p id="study_time"></p>
+      <div id="emptySpaceFinish"></div>
+      <button id="startover">Reset</button>
+    </div>
     
     <script src="../javascript/finished_screen.js"></script>
   </body>

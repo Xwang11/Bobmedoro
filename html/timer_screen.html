@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta charset="UTF-8" /> <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
@@ -11,19 +10,16 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <link rel="stylesheet" href="../css/main.css">
-    
-    <title>Timer Screen</title>
-  </head>
-  <body class="timerPage">
-    <nav class="navbar">
-        <button id="opencloseSettings">Settings</button>
-        <button id="minButton">-</button>
-        <button id="closeButton">x</button>
-    </nav>
 
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Bobmedoro</title>
+  </head>
+
+
+  <body class="timerPage">
+
+    <button id="opencloseSettings">Settings</button>
     <div id="settingsMenu" class="settings-menu">
-      <h2>Settings</h2>
       <p>Focus Time: </p>
       <input type="number" id="focusTime" placeholder="25">
       <p>Short Rest Time: </p>
@@ -34,30 +30,43 @@
       <button id="saveSettingsButton">Save</button>
     </div>
 
-
-
-    <h1 id="lock_in_status"></h1>
+    <div class="timerPageContainer">
+      <img src="../assets/Bob Focus.png" id = bobStateFocus class="bobFocus">
+      <img src="../assets/Relaxed Bob.png" id = bobStateRelax class="bobRelax">
+      <img src="../assets/Pencil.png" id = bobWindow class="bobPencil">
+      <img src="../assets/Paper.png" class="bobPaper">
     <div id="timer">
         <span id="minutes">25</span>:<span id="seconds">00</span>
     </div>
 
-    <button id="play_pause_button">Play/Pause</button>
-    <button id="skip_button">Skip</button>
-    <button id="reset_button">Reset</button>
-    <p id="round_display"></p>
+    <h1 id="lock_in_status"></h1>
+    <div class="emptySpace"></div>
+    <div class="corner">
+      <p id="round_display"></p>
+      <button class="buttons" id="play_pause_button"></button>
+      <button class="buttons" id="skip_button"></button>
+      <button class="buttons" id="reset_button">Reset</button>
+  </div>
+
+    </div>
+
 
 
     <div id="finished" class="popup">
-      <h2>Are you fiinished?</h2>
-      <button id="yemsh_button">Yemsh</button>
-      <button id="nyo_button">Nyo</button>
+      <h2>Are you finished?</h2>
+      <div class="popupButtonsContainer">
+      <button id="yemsh_button" class="popupButtons">Yemsh</button>
+      <button id="nyo_button" class="popupButtons">Nyo</button>
+      </div>
 
     </div>
 
     <div id="timer_finished_popup" class="popup">
       <h2>Timer Finished!</h2>
-      <button id="continue_button">Continue</button>
-      <button id="done_button">No mroe</button>
+      <div class="popupButtonsContainer">
+      <button id="continue_button" class="popupButtons">Continue</button>
+      <button id="done_button" class="popupButtons">No mroe</button>
+    </div>
     </div>
     
     <script src="../javascript/timer_screen.js"></script>

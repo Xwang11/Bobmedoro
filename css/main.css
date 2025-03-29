@@ -1,6 +1,275 @@
+/*Font downloaded from google*/
+@font-face {
+    font-family: 'Slackey';
+    src: url('../assets/Slackey/Slackey-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    height:100%;
+}
+
+/*For index.html aka Start page*/
+.startPage {
+    background-image: url("../assets/Bob\ Start.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.startPageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;   
+    height: 100vh;         
+}
+
+.startPageMessage {
+    font-size: 40px;
+    font-family: "Slackey", sans-serif;
+    text-align: center;
+}
+
+#notes {
+    text-align: center;
+    background-image: url("../assets/notes\ bar.png");
+    background-color: transparent;
+    background-size: fill;
+    border: none;
+    background-repeat: no-repeat;
+    height:32px;
+    width:200px;
+}
+
+#go_button {
+    background-color: transparent;
+    background-image: url("../assets/buttons/go\ button.png");
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    height: 80px;
+    width:80px;
+    padding:none;
+
+    position: fixed;
+    bottom: 110px;
+    left:30px;
+}
+
+/*For timer_screen.html */
+/*Takes care of the background*/
+.timerPage {
+    background-image: url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+
+/*Page elements*/
+.timerPageContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Slackey", sans-serif;
+}
+
+.bobFocus {
+    position: absolute;
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    object-fit: cover;
+    z-index: -2;
+}
+
+.bobRelax {
+    display: none;
+    position: absolute;
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    object-fit: cover;
+    z-index: -2;
+}
+
+.bobPencil {
+    position: absolute;
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    object-fit: cover;
+    z-index: -1;
+}
+
+.bobPaper {
+    position: absolute;
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    object-fit: cover;
+    z-index: -3;
+}
+
+
+#timer {
+    font-size: 90px;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+#lock_in_status {
+    font-size: 30px;
+    text-align: center;
+    padding: 0px;
+    margin-top: -20px;
+    padding: 0px;
+}
+
+.emptySpace {
+    height:72px
+}
+
+.corner {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+#round_display {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.buttons {
+    background-color: transparent;
+    background-size: contain;
+    font-family: "S";
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    height: 32px;
+    width:32px;
+    padding:4px;
+    font-family: "Slackey", sans-serif;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+#play_pause_button {
+    background-image: url("../assets/buttons/pauseButton.png");
+}
+#skip_button {
+    background-image: url("../assets/buttons/skipButton.png")
+}
+
+#reset_button {
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+
+/* Finished Page */
+.finishedPage {
+    background-image: url("../assets/Bob\ Finished.png"),url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    font-family: "Slackey";
+}
+
+.finishedPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+}
+
+#finalMessage {
+    font-size: 52px;
+    margin-top: 10px;
+}
+
+#study_time {
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+#emptySpaceFinish {
+    height: 40px;
+}
+
+#startover {
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    color: #E88600;
+    font-weight: bold;
+    font-family: "Slackey", sans-serif;
+    margin-top: 132px;
+    font-size: 16px;
+}
+
+/* Settings */
+#opencloseSettings {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Slackey", sans-serif;
+    font-size: 16px;
+    padding-top: 12px;
+    margin-bottom: -10px;
+}
+
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: fixed;
+    left: -324px;
+    top: 40;
+    width: 324px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    font-family: "Slackey";
+}
+
+.settings-menu.active {
+    left: 0;
+  } 
+
+#saveSettingsButton {
+    font-family: "Slackey";
+    font-size: 20px;
+    color: #E88600;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* Popups */
+
 .popup {
     display: none;
+    flex-direction: column;
+    align-items: center;
     position:absolute;
+    text-align: center;
+    font-family: "Slackey";
+    font-size: 20px;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -12,38 +281,29 @@
     
 }
 
-.settings-menu {
-    position: fixed;
-    left: -300px;
-    top: 40;
-    width: 300px;
-    height: 100%;
-    background-color: #f1f1f1;
-    transition: left 0.3s ease;
-    z-index: 1000;
+.popupButtons {
+    font-family: "Slackey";
+    font-size: 16px;
+    color:#E88600;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.settings-menu.active {
-    left: 0;
-  }  
-
-
-.mainPage {
-    background-image: url("../assets/Bob\ Start.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
+.popupButtonsContainer {
+    display: flex;
+    flex-direction: row;
 }
+ 
 
-.timerPage {
-    background-image: url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
-}
 
-.timerPage.lockedIn{
-    background-image: url("../assets/Bob\ Focus.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
-}
 
-.timerPage.relaxed{
-    background-image: url("../assets/Relaxed\ Bob.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
-}
 
-.finishedPage {
-    background-image: url("../assets/Bob\ Finished.png"), url("../assets/Window\ Frame.png"), url("../assets/Background_Sky.png");
-}
+
+/* h1 {
+    font-size: 40px;
+    font-family: "Slackey", sans-serif;
+    text-align: center;
+    
+} */
