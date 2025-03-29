@@ -36,9 +36,10 @@ html, body {
 
 #notes {
     text-align: center;
-    background-image: url("../assets/notes\ bar.png");
-    background-color: transparent;
+    background-color: #F4BC7B;
+    opacity: 80%;
     background-size: fill;
+    border-radius: 12px;
     border: none;
     background-repeat: no-repeat;
     height:32px;
@@ -46,12 +47,15 @@ html, body {
 }
 
 #go_button {
-    background-color: transparent;
-    background-image: url("../assets/buttons/go\ button.png");
+    background-color: #F4BC7B;
+    opacity: 80%;
     background-size: contain;
-    border: none;
+    border: 2px solid;
+    border-radius: 50%;
     cursor: pointer;
-    color: #ffffff;
+    color: black;
+    font-family: "Slackey";
+    font-size:30px;
     font-weight: bold;
     height: 80px;
     width:80px;
