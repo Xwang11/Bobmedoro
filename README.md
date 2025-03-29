@@ -22,8 +22,6 @@ Once the figma prototyle was up to par, and I have a clear idea of what I want t
 ## Current Download
 Download [Here](https://github.com/Xwang11/Bobmedoro/raw/refs/heads/main/bobmedoro-darwin-arm64-1.0.0.zip?download=)!!!!
 
-hosted on google drive because the zip file size was too large for github
-
 On macs the app might show as damaged due to extra metadata. Do the following to fix that issue:
 - Open terminal
 - Type in "xattr -cr \<path-to-the-unzipped-app\>.app"
