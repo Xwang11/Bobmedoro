@@ -23,3 +23,8 @@ Once the figma prototyle was up to par, and I have a clear idea of what I want t
 Download [Here](https://drive.google.com/file/d/1ZwURYjX0qp5PMT6hXHj9C-FdXAPa2bIF/view?usp=sharing)!!!!
 
 hosted on google drive because the zip file size was too large for github
+
+On macs the app might show as damaged due to extra metadata. Do the following to fix that issue:
+- Open terminal
+- Type in "xattr -cr <path-to-the-unzipped-app>.app"
+- Or you can type "xattr -cr " then drag the file to terminal 
