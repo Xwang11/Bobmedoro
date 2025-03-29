@@ -20,6 +20,6 @@ Once the figma prototyle was up to par, and I have a clear idea of what I want t
 - Possibly integrating app as a browser extension
 
 ## Current Download
-Download [Here](https://drive.google.com/file/d/1FvWTs6ySY2bgiffQJzC8wK-qOtRaCFmS/view?usp=sharing)!!!!
+Download [Here](https://drive.google.com/file/d/1ZwURYjX0qp5PMT6hXHj9C-FdXAPa2bIF/view?usp=sharing)!!!!
 
 hosted on google drive because the zip file size was too large for github
